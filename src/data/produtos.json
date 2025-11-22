@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "nome": "Pão Francês",
+    "preco": 0.50,
+    "categoria": "Pães",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Pão francês tradicional, quentinho e crocante"
+  },
+  {
+    "id": 2,
+    "nome": "Bolo de Chocolate",
+    "preco": 25.00,
+    "categoria": "Bolos",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Bolo de chocolate caseiro com cobertura cremosa"
+  },
+  {
+    "id": 3,
+    "nome": "Croissant",
+    "preco": 4.50,
+    "categoria": "Pães",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Croissant francês folhado e amanteigado"
+  },
+  {
+    "id": 4,
+    "nome": "Pão de Queijo",
+    "preco": 2.00,
+    "categoria": "Salgados",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Pão de queijo mineiro tradicional"
+  },
+  {
+    "id": 5,
+    "nome": "Torta de Limão",
+    "preco": 35.00,
+    "categoria": "Tortas",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Torta de limão com merengue suíço"
+  },
+  {
+    "id": 6,
+    "nome": "Sonho",
+    "preco": 3.50,
+    "categoria": "Doces",
+    "lojaId": 1,
+    "loja": "Padaria do João",
+    "descricao": "Sonho recheado com creme ou doce de leite"
+  },
+  {
+    "id": 7,
+    "nome": "Vestido Floral",
+    "preco": 89.90,
+    "categoria": "Vestuário",
+    "lojaId": 2,
+    "loja": "Boutique da Maria",
+    "descricao": "Vestido leve e elegante com estampa floral"
+  },
+  {
+    "id": 8,
+    "nome": "Calça Jeans",
+    "preco": 129.90,
+    "categoria": "Vestuário",
+    "lojaId": 2,
+    "loja": "Boutique da Maria",
+    "descricao": "Calça jeans de alta qualidade, modelagem moderna"
+  },
+  {
+    "id": 9,
+    "nome": "Conserto de Notebook",
+    "preco": 150.00,
+    "categoria": "Serviços",
+    "lojaId": 3,
+    "loja": "Oficina do Carlos",
+    "descricao": "Diagnóstico e reparo completo de notebooks"
+  },
+  {
+    "id": 10,
+    "nome": "Formatação PC",
+    "preco": 80.00,
+    "categoria": "Serviços",
+    "lojaId": 3,
+    "loja": "Oficina do Carlos",
+    "descricao": "Formatação completa com instalação de programas"
+  },
+  {
+    "id": 11,
+    "nome": "Corte de Cabelo",
+    "preco": 35.00,
+    "categoria": "Beleza",
+    "lojaId": 4,
+    "loja": "Salão da Ana",
+    "descricao": "Corte de cabelo feminino com profissional experiente"
+  },
+  {
+    "id": 12,
+    "nome": "Frutas Orgânicas",
+    "preco": 12.00,
+    "categoria": "Alimentação",
+    "lojaId": 5,
+    "loja": "Mercadinho São José",
+    "descricao": "Frutas frescas e orgânicas (preço por kg)"
+  },
+  {
+    "id": 13,
+    "nome": "Ração Premium",
+    "preco": 85.00,
+    "categoria": "Pet Shop",
+    "lojaId": 6,
+    "loja": "Pet Shop Amigo Fiel",
+    "descricao": "Ração premium para cães adultos - 15kg"
+  }
+]

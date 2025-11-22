@@ -1,0 +1,23 @@
+{
+  "totalComercio": 500,
+  "totalProdutos": 10000,
+  "totalClientes": 50000,
+  "features": [
+    {
+      "title": "Divulgue seu Negócio",
+      "description": "Crie seu perfil e mostre seus produtos para milhares de clientes em potencial."
+    },
+    {
+      "title": "Conecte-se com Clientes",
+      "description": "Mantenha contato direto com seus clientes, mesmo se mudar de localização."
+    },
+    {
+      "title": "Cresça seu Negócio",
+      "description": "Aumente suas vendas e fortaleça sua presença no mercado local."
+    },
+    {
+      "title": "Localização Fácil",
+      "description": "Clientes encontram você facilmente através de busca por localização."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "nome": "Padaria do João",
+    "categoria": "Alimentação",
+    "descricao": "Pães artesanais fresquinhos todos os dias. Tradição e qualidade há 20 anos servindo a comunidade local.",
+    "endereco": "Rua das Flores, 123 - Centro, São Paulo - SP",
+    "telefone": "(11) 98765-4321",
+    "email": "contato@padariadojoao.com.br",
+    "horario": "Seg - Sex: 6h às 20h | Sáb - Dom: 6h às 14h",
+    "avaliacao": 4.8,
+    "produtos": [1, 2, 3, 4, 5, 6]
+  },
+  {
+    "id": 2,
+    "nome": "Boutique da Maria",
+    "categoria": "Vestuário",
+    "descricao": "Moda feminina com preços acessíveis e modelos exclusivos para todos os estilos.",
+    "endereco": "Av. Principal, 456 - Jardim, São Paulo - SP",
+    "telefone": "(11) 98765-1234",
+    "email": "contato@boutiquedamaria.com.br",
+    "horario": "Seg - Sáb: 9h às 19h | Dom: 10h às 14h",
+    "avaliacao": 4.5,
+    "produtos": [7, 8]
+  },
+  {
+    "id": 3,
+    "nome": "Oficina do Carlos",
+    "categoria": "Serviços",
+    "descricao": "Consertos de eletrônicos e informática. Atendimento rápido e preços justos.",
+    "endereco": "Rua do Comércio, 789 - Vila Nova, São Paulo - SP",
+    "telefone": "(11) 98765-5678",
+    "email": "contato@oficinadocarlos.com.br",
+    "horario": "Seg - Sex: 8h às 18h | Sáb: 8h às 12h",
+    "avaliacao": 4.9,
+    "produtos": [9, 10]
+  },
+  {
+    "id": 4,
+    "nome": "Salão da Ana",
+    "categoria": "Beleza",
+    "descricao": "Cortes, coloração e tratamentos capilares com profissionais qualificados.",
+    "endereco": "Av. Beleza, 321 - Centro, São Paulo - SP",
+    "telefone": "(11) 98765-9876",
+    "email": "contato@salaodaana.com.br",
+    "horario": "Ter - Sáb: 9h às 19h | Dom - Seg: Fechado",
+    "avaliacao": 4.7,
+    "produtos": [11]
+  },
+  {
+    "id": 5,
+    "nome": "Mercadinho São José",
+    "categoria": "Alimentação",
+    "descricao": "Hortifruti frescos e produtos de qualidade. Atendimento familiar e acolhedor.",
+    "endereco": "Rua da Igreja, 555 - São José, São Paulo - SP",
+    "telefone": "(11) 98765-4444",
+    "email": "contato@mercadinhosaojose.com.br",
+    "horario": "Seg - Sáb: 7h às 20h | Dom: 7h às 12h",
+    "avaliacao": 4.6,
+    "produtos": [12]
+  },
+  {
+    "id": 6,
+    "nome": "Pet Shop Amigo Fiel",
+    "categoria": "Pet Shop",
+    "descricao": "Tudo para seu animal de estimação. Produtos de qualidade e atenção especializada.",
+    "endereco": "Av. dos Pets, 888 - Jardim das Flores, São Paulo - SP",
+    "telefone": "(11) 98765-7777",
+    "email": "contato@petshopamigofiel.com.br",
+    "horario": "Seg - Sex: 9h às 19h | Sáb: 9h às 17h",
+    "avaliacao": 4.9,
+    "produtos": [13]
+  },
+  {
+    "id": 7,
+    "nome": "Pizzaria do Beto",
+    "categoria": "Alimentação",
+    "descricao": "Pizzas artesanais com massa fina e ingredientes selecionados. Delivery rápido!",
+    "endereco": "Rua das Pizzas, 200 - Centro, São Paulo - SP",
+    "telefone": "(11) 98765-3333",
+    "email": "contato@pizzariadobeto.com.br",
+    "horario": "Ter - Dom: 18h às 23h | Seg: Fechado",
+    "avaliacao": 4.8,
+    "produtos": []
+  },
+  {
+    "id": 8,
+    "nome": "Doceria da Fê",
+    "categoria": "Alimentação",
+    "descricao": "Doces artesanais e bolos personalizados para todas as ocasiões.",
+    "endereco": "Rua dos Doces, 150 - Vila Mariana, São Paulo - SP",
+    "telefone": "(11) 98765-2222",
+    "email": "contato@doceriadafe.com.br",
+    "horario": "Seg - Sex: 10h às 19h | Sáb: 10h às 15h",
+    "avaliacao": 5.0,
+    "produtos": []
+  },
+  {
+    "id": 9,
+    "nome": "Barbearia do Rick",
+    "categoria": "Beleza",
+    "descricao": "Cortes modernos e tradicionais. Ambiente descontraído e profissional.",
+    "endereco": "Rua dos Barbeiros, 90 - Pinheiros, São Paulo - SP",
+    "telefone": "(11) 98765-1111",
+    "email": "contato@barbeariadorick.com.br",
+    "horario": "Ter - Sáb: 10h às 20h | Dom - Seg: Fechado",
+    "avaliacao": 4.6,
+    "produtos": []
+  }
+]
