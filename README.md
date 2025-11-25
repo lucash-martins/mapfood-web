@@ -18,5 +18,3 @@ Tecnologias usadas:
 - React
 - shadcn-ui
 - Tailwind CSS
-
-Para deploy, use o provedor de sua preferência (Vercel, Netlify, Cloudflare Pages etc.).
