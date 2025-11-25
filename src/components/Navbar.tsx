@@ -8,11 +8,11 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Início" },
+    { to: "/como-funciona", label: "Como Funciona" },
+    { to: "/contato", label: "Contato" },
     { to: "/comerciantes", label: "Comerciantes" },
     { to: "/produtos", label: "Produtos" },
-    { to: "/como-funciona", label: "Como Funciona" },
     { to: "/sobre", label: "Sobre" },
-    { to: "/contato", label: "Contato" },
   ];
 
   return (
