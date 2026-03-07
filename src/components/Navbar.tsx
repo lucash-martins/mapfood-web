@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu, X, Store } from "lucide-react";
+import { Menu, X, Store, User, LogOut } from "lucide-react";
 import { useState } from "react";
-import { User } from "lucide-react";
+import { useAuth } from "../contexts/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
 
   const navLinks = [
-    { to: "/", label: "Início" },
+    { to: "/home", label: "Início" },
     { to: "/como-funciona", label: "Como Funciona" },
     { to: "/contato", label: "Contato" },
     { to: "/comerciantes", label: "Comerciantes" },
@@ -16,11 +18,16 @@ const Navbar = () => {
     { to: "/sobre", label: "Sobre" },
   ];
 
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold">
+          <Link to="/home" className="flex items-center gap-2 text-xl font-bold">
             <Store className="h-6 w-6 text-primary" />
             <span className="text-gradient">MapFood</span>
           </Link>
@@ -37,37 +44,58 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="relative group">
-  {/* Botão do ícone */}
-  <button className="p-2 rounded-full hover:bg-gray-200 transition">
-    <User size={22} />
-  </button>
+              {/* Botão do ícone */}
+              <button className="p-2 rounded-full hover:bg-gray-200 transition">
+                <User size={22} />
+              </button>
 
-  {/* Menu dropdown */}
-  <div
-    className="
-      absolute right-0 mt-2 w-40
-      bg-white border rounded-lg shadow-md
-      opacity-0 invisible
-      group-hover:opacity-100 group-hover:visible
-      transition-all duration-200
-    "
-  >
-    <Link
-      to="/login"
-      className="block px-4 py-2 hover:bg-gray-100"
-    >
-      Login
-    </Link>
-
-    <Link
-      to="/cadastro"
-      className="block px-4 py-2 hover:bg-gray-100"
-    >
-      Cadastre-se
-    </Link>
-  </div>
-</div>
-
+              {/* Menu dropdown */}
+              <div
+                className="
+                  absolute right-0 mt-2 w-40
+                  bg-white border rounded-lg shadow-md
+                  opacity-0 invisible
+                  group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200
+                "
+              >
+                {isAuthenticated ? (
+                  <>
+                    <div className="px-4 py-2 border-b text-sm text-gray-600">
+                      Olá, {user?.name}
+                    </div>
+                    <Link
+                      to="/meu-perfil"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Meu Perfil
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600 flex items-center gap-2"
+                    >
+                      <LogOut size={16} />
+                      Sair
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/cadastro"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Cadastre-se
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,12 +120,41 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            
-            <Link to="/cadastro" onClick={() => setIsOpen(false)}>
-              <Button variant="default" className="w-full">
-               Cadastre-se
-              </Button>
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <div className="text-sm text-gray-600 py-2">
+                  Olá, {user?.name}
+                </div>
+                <Link to="/meu-perfil" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full mb-2">
+                    Meu Perfil
+                  </Button>
+                </Link>
+                <Button 
+                  variant="destructive" 
+                  className="w-full"
+                  onClick={() => {
+                    handleLogout();
+                    setIsOpen(false);
+                  }}
+                >
+                  Sair
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full mb-2">
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/cadastro" onClick={() => setIsOpen(false)}>
+                  <Button variant="default" className="w-full">
+                    Cadastre-se
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         )}
       </div>
