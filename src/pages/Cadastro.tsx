@@ -1,119 +1,127 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Store, User, Mail, Phone, MapPin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Lock, Eye, User } from "lucide-react";
+import { Link } from "react-router-dom";
+import LoginImg from "../assets/images/foto-login.png";
 
-const Cadastro = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Cadastro realizado com sucesso!",
-      description: "Em breve entraremos em contato para ativar seu perfil.",
-    });
-  };
-
+export default function Cadastro() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      
-      <main className="flex-1 py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto space-y-8 animate-fade-in">
-            <div className="text-center space-y-2">
-              <h1 className="text-4xl font-bold">
-                Cadastre seu <span className="text-gradient">Negócio</span>
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Preencha os dados abaixo e comece a divulgar seus produtos
-              </p>
+    <div className="h-screen flex flex-col md:flex-row overflow-hidden">
+
+      {/* Lado esquerdo - Formulário */}
+      <div className="flex-1 flex items-center justify-center bg-white p-6 md:p-8">
+        <div className="w-full max-w-md">
+
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">
+            Crie sua conta
+          </h1>
+
+          {/* Nome */}
+          <div className="mb-4">
+            <label className="block mb-1 text-sm">Nome completo</label>
+
+            <div className="flex items-center border rounded-lg px-3">
+              <User size={18} className="text-gray-400" />
+
+              <input
+                type="text"
+                placeholder="Seu nome"
+                className="w-full p-2 outline-none"
+              />
             </div>
-
-            <Card className="card-elevated">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Store className="h-5 w-5 text-primary" />
-                  Informações do Negócio
-                </CardTitle>
-                <CardDescription>
-                  Forneça as informações básicas sobre seu empreendimento
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="nome-negocio">
-                      <User className="inline h-4 w-4 mr-2" />
-                      Nome do Negócio
-                    </Label>
-                    <Input id="nome-negocio" placeholder="Ex: Padaria do João" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="proprietario">Nome do Proprietário</Label>
-                    <Input id="proprietario" placeholder="Seu nome completo" required />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        <Mail className="inline h-4 w-4 mr-2" />
-                        E-mail
-                      </Label>
-                      <Input id="email" type="email" placeholder="seu@email.com" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="telefone">
-                        <Phone className="inline h-4 w-4 mr-2" />
-                        Telefone
-                      </Label>
-                      <Input id="telefone" type="tel" placeholder="(11) 98765-4321" required />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="endereco">
-                      <MapPin className="inline h-4 w-4 mr-2" />
-                      Endereço Completo
-                    </Label>
-                    <Input id="endereco" placeholder="Rua, número, bairro, cidade" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="descricao">Descrição do Negócio</Label>
-                    <Textarea 
-                      id="descricao" 
-                      placeholder="Conte um pouco sobre seu negócio, produtos e serviços..."
-                      rows={4}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="categoria">Categoria</Label>
-                    <Input id="categoria" placeholder="Ex: Alimentação, Vestuário, Serviços..." required />
-                  </div>
-
-                  <Button type="submit" className="w-full btn-glow" size="lg">
-                    Cadastrar Negócio
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
-        </div>
-      </main>
 
-      <Footer />
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block mb-1 text-sm">E-mail</label>
+
+            <div className="flex items-center border rounded-lg px-3">
+              <Mail size={18} className="text-gray-400" />
+
+              <input
+                type="email"
+                placeholder="seuemail@gmail.com"
+                className="w-full p-2 outline-none"
+              />
+            </div>
+          </div>
+
+          {/* Senha */}
+          <div className="mb-4">
+            <label className="block mb-1 text-sm">Senha</label>
+
+            <div className="flex items-center border rounded-lg px-3">
+              <Lock size={18} className="text-gray-400" />
+
+              <input
+                type="password"
+                placeholder="sua senha"
+                className="w-full p-2 outline-none"
+              />
+
+              <Eye
+                size={18}
+                className="text-gray-400 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          {/* Confirmar Senha */}
+          <div className="mb-6">
+            <label className="block mb-1 text-sm">Confirmar senha</label>
+
+            <div className="flex items-center border rounded-lg px-3">
+              <Lock size={18} className="text-gray-400" />
+
+              <input
+                type="password"
+                placeholder="confirme sua senha"
+                className="w-full p-2 outline-none"
+              />
+
+              <Eye
+                size={18}
+                className="text-gray-400 cursor-pointer"
+              />
+            </div>
+          </div>
+
+          {/* Botão */}
+          <button
+            className="
+              w-full bg-indigo-500
+              text-white py-3 rounded-lg
+              hover:bg-indigo-600
+              transition
+            "
+          >
+            Cadastrar
+          </button>
+
+          {/* Login */}
+          <p className="text-center mt-6 text-sm text-gray-500">
+            Já tem uma conta?{" "}
+            <Link
+              to="/login"
+              className="text-indigo-600 font-medium"
+            >
+              Faça login
+            </Link>
+          </p>
+
+        </div>
+      </div>
+
+      {/* Lado direito - Imagem (oculto em mobile) */}
+      <div className="hidden md:flex flex-1 bg-indigo-500 flex-col items-center justify-center text-white p-10">
+
+        <img src={LoginImg} alt="Cadastro" className="max-w-xs lg:max-w-sm" />
+
+        <p className="text-center text-lg max-w-md mt-4">
+          Junte-se a nós e descubra os melhores
+          comerciantes da sua região.
+        </p>
+
+      </div>
+
     </div>
   );
-};
-
-export default Cadastro;
+}
