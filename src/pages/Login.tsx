@@ -1,26 +1,21 @@
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
 import LoginImg from "../assets/images/foto-login.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    
-    if (login(email, password)) {
-      navigate("/home");
-    } else {
-      setError("E-mail ou senha inválidos");
-    }
+    // Salva estado de login no localStorage
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userEmail", email);
+    // Redireciona para home após login
+    navigate("/home");
   };
 
   return (
@@ -81,11 +76,6 @@ export default function Login() {
                 </button>
               </div>
             </div>
-
-            {/* Erro */}
-            {error && (
-              <p className="text-red-500 text-sm mb-4">{error}</p>
-            )}
 
             {/* Lembrar / Esqueci */}
             <div className="flex justify-between items-center mb-6 text-sm">

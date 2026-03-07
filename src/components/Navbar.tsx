@@ -1,13 +1,32 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X, Store, User, LogOut } from "lucide-react";
-import { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, isAuthenticated, logout } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkLogin = () => {
+      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+      const email = localStorage.getItem("userEmail") || "";
+      // Extrai o nome do email (antes do @)
+      setUserName(email.split("@")[0]);
+    };
+    checkLogin();
+    window.addEventListener("storage", checkLogin);
+    return () => window.removeEventListener("storage", checkLogin);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userEmail");
+    setIsLoggedIn(false);
+    navigate("/login");
+  };
 
   const navLinks = [
     { to: "/home", label: "Início" },
@@ -17,11 +36,6 @@ const Navbar = () => {
     { to: "/produtos", label: "Produtos" },
     { to: "/sobre", label: "Sobre" },
   ];
-
-  const handleLogout = () => {
-    logout();
-    navigate("/");
-  };
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -59,13 +73,13 @@ const Navbar = () => {
                   transition-all duration-200
                 "
               >
-                {isAuthenticated ? (
+                {isLoggedIn ? (
                   <>
-                    <div className="px-4 py-2 border-b text-sm text-gray-600">
-                      Olá, {user?.name}
+                    <div className="px-4 py-2 border-b text-sm font-medium text-gray-700">
+                      Olá, {userName}
                     </div>
                     <Link
-                      to="/meu-perfil"
+                      to="/perfil"
                       className="block px-4 py-2 hover:bg-gray-100"
                     >
                       Meu Perfil
@@ -120,24 +134,20 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            {isAuthenticated ? (
+            {isLoggedIn ? (
               <>
-                <div className="text-sm text-gray-600 py-2">
-                  Olá, {user?.name}
-                </div>
-                <Link to="/meu-perfil" onClick={() => setIsOpen(false)}>
+                <p className="text-sm font-medium text-gray-700 mb-2">Olá, {userName}</p>
+                <Link to="/perfil" onClick={() => setIsOpen(false)}>
                   <Button variant="outline" className="w-full mb-2">
                     Meu Perfil
                   </Button>
                 </Link>
-                <Button 
-                  variant="destructive" 
+                <Button
+                  variant="destructive"
                   className="w-full"
-                  onClick={() => {
-                    handleLogout();
-                    setIsOpen(false);
-                  }}
+                  onClick={() => { setIsOpen(false); handleLogout(); }}
                 >
+                  <LogOut size={16} className="mr-2" />
                   Sair
                 </Button>
               </>
