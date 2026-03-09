@@ -87,9 +87,9 @@ export default function Cadastro() {
           {/* Botão */}
           <button
             className="
-              w-full bg-indigo-500
+              w-full bg-red-600
               text-white py-3 rounded-lg
-              hover:bg-indigo-600
+              hover:bg-red-700
               transition
             "
           >
@@ -101,7 +101,7 @@ export default function Cadastro() {
             Já tem uma conta?{" "}
             <Link
               to="/login"
-              className="text-indigo-600 font-medium"
+              className="text-red-600 font-medium"
             >
               Faça login
             </Link>
@@ -111,7 +111,7 @@ export default function Cadastro() {
       </div>
 
       {/* Lado direito - Imagem (oculto em mobile) */}
-      <div className="hidden md:flex flex-1 bg-indigo-500 flex-col items-center justify-center text-white p-10">
+      <div className="hidden md:flex flex-1 bg-red-600 flex-col items-center justify-center text-white p-10">
 
         <img src={LoginImg} alt="Cadastro" className="max-w-xs lg:max-w-sm" />
 

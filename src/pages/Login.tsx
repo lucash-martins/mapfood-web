@@ -87,7 +87,7 @@ export default function Login() {
 
               <Link
                 to="/esqueci-senha"
-                className="text-indigo-600 hover:underline"
+                className="text-red-600 hover:underline"
               >
                 Esqueci minha senha
               </Link>
@@ -97,9 +97,9 @@ export default function Login() {
             <button
               type="submit"
               className="
-                w-full bg-indigo-500
+                w-full bg-red-600
                 text-white py-3 rounded-lg
-                hover:bg-indigo-600
+                hover:bg-red-700
                 transition
               "
             >
@@ -112,7 +112,7 @@ export default function Login() {
             Não tem conta ainda?{" "}
             <Link
               to="/cadastro"
-              className="text-indigo-600 font-medium"
+              className="text-red-600 font-medium"
             >
               Crie agora
             </Link>
@@ -129,7 +129,7 @@ export default function Login() {
       </div>
 
       {/* Lado direito - Imagem (oculto em mobile) */}
-      <div className="hidden md:flex flex-1 bg-indigo-500 flex-col items-center justify-center text-white p-10">
+      <div className="hidden md:flex flex-1 bg-red-600 flex-col items-center justify-center text-white p-10">
 
         <img src={LoginImg} alt="Login" className="max-w-xs lg:max-w-sm" />
 

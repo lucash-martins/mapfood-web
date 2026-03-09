@@ -20,98 +20,98 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
     
-    /* Primary - Roxo Vivo (#8400FF) */
-    --primary: 274 100% 50%;
+    /* Primary - Vermelho Vibrante (#d6011b) */
+    --primary: 348 93% 42%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Roxo Médio (#744397) */
-    --secondary: 281 35% 52%;
+    /* Secondary - Vermelho Escuro (#a3000f) */
+    --secondary: 348 100% 32%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Accent - Roxo Claro (#B8A3C7) */
-    --accent: 282 23% 70%;
-    --accent-foreground: 0 0% 5%;
+    /* Accent - Vermelho Claro (#e85a63) */
+    --accent: 348 84% 60%;
+    --accent-foreground: 348 40% 8%;
     
-    /* Muted - Branco Off (#EDEFF1) */
-    --muted: 210 17% 94%;
-    --muted-foreground: 0 0% 40%;
+    /* Muted - Tom claro de vermelho */
+    --muted: 348 30% 88%;
+    --muted-foreground: 348 40% 35%;
     
-    /* Title - Roxo Title (#8A3DD6) */
-    --title: 275 72% 53%;
+    /* Title - Vermelho vivo */
+    --title: 348 100% 39%;
     
-    /* Roxo Escuro (#5C2891) */
-    --purple-dark: 279 56% 36%;
+    /* Vermelho Escuro (#7d0011) */
+    --purple-dark: 348 100% 25%;
     
-    /* Roxo Profundo (#4C1E76) */
-    --purple-deep: 278 60% 29%;
+    /* Vermelho Profundo (#5c000d) */
+    --purple-deep: 348 100% 18%;
     
     /* Destructive */
-    --destructive: 0 84% 60%;
+    --destructive: 348 93% 42%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Border & Input */
-    --border: 210 17% 90%;
-    --input: 210 17% 90%;
-    --ring: 274 100% 50%;
+    /* Border & Input - Tom médio de vermelho */
+    --border: 348 40% 85%;
+    --input: 348 35% 88%;
+    --ring: 348 93% 42%;
     
     /* Radius */
     --radius: 0.75rem;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(274 100% 50%), hsl(279 56% 36%));
-    --gradient-accent: linear-gradient(135deg, hsl(282 23% 70%), hsl(281 35% 52%));
+    --gradient-primary: linear-gradient(135deg, hsl(348 93% 42%), hsl(348 100% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(348 84% 60%), hsl(348 100% 32%));
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(274 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.08);
+    --shadow-glow: 0 0 40px hsl(348 93% 42% / 0.3);
+    --shadow-card: 0 4px 20px hsl(348 93% 42% / 0.1);
   }
 
   .dark {
-    /* Backgrounds - Cinza BG (#202123) */
-    --background: 210 7% 13%;
-    --foreground: 0 0% 100%;
+    /* Backgrounds - Dark mode baseado em #d6011b */
+    --background: 348 35% 12%;
+    --foreground: 348 20% 90%;
     
-    /* Card - Cinza Components (#3B3D40) */
-    --card: 210 3% 20%;
-    --card-foreground: 0 0% 100%;
+    /* Card - Componentes dark vermelho */
+    --card: 348 40% 18%;
+    --card-foreground: 348 20% 90%;
     
     /* Popover */
-    --popover: 210 3% 20%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 348 40% 18%;
+    --popover-foreground: 348 20% 90%;
     
-    /* Primary - Roxo Vivo */
-    --primary: 274 100% 50%;
+    /* Primary - Vermelho Vibrante */
+    --primary: 348 93% 42%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Roxo Médio */
-    --secondary: 281 35% 52%;
+    /* Secondary - Vermelho Escuro */
+    --secondary: 348 100% 32%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Accent - Roxo Claro */
-    --accent: 282 23% 70%;
-    --accent-foreground: 210 7% 13%;
+    /* Accent - Vermelho Claro */
+    --accent: 348 84% 60%;
+    --accent-foreground: 348 35% 12%;
     
-    /* Muted */
-    --muted: 210 3% 25%;
-    --muted-foreground: 0 0% 70%;
+    /* Muted - Tom escuro de vermelho */
+    --muted: 348 35% 20%;
+    --muted-foreground: 348 15% 75%;
     
     /* Title */
-    --title: 275 72% 53%;
+    --title: 348 95% 55%;
     
-    /* Roxo Escuro */
-    --purple-dark: 279 56% 36%;
+    /* Vermelho Escuro */
+    --purple-dark: 348 100% 25%;
     
-    /* Roxo Profundo */
-    --purple-deep: 278 60% 29%;
+    /* Vermelho Profundo */
+    --purple-deep: 348 100% 18%;
     
     /* Destructive */
-    --destructive: 0 63% 31%;
+    --destructive: 348 93% 42%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Border & Input */
-    --border: 210 3% 25%;
-    --input: 210 3% 25%;
-    --ring: 274 100% 50%;
+    /* Border & Input - Tom escuro de vermelho */
+    --border: 348 35% 25%;
+    --input: 348 35% 25%;
+    --ring: 348 93% 42%;
   }
 }
 
