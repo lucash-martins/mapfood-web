@@ -53,6 +53,18 @@ export default {
         title: "hsl(var(--title))",
         "purple-dark": "hsl(var(--purple-dark))",
         "purple-deep": "hsl(var(--purple-deep))",
+        // Paleta personalizada
+        preto: "hsl(var(--preto))",
+        branco: "hsl(var(--branco))",
+        transparent: "hsl(var(--transparent))",
+        "branco-background": "hsl(var(--branco-background))",
+        "cinza-background": "hsl(var(--cinza-background))",
+        "cinza-components": "hsl(var(--cinza-components))",
+        "vermelho-components": "hsl(var(--vermelho-components))",
+        "preto-components": "hsl(var(--preto-components))",
+        "preto-degrade-1": "hsl(var(--preto-degrade-1))",
+        "marrom-degrade-2": "hsl(var(--marrom-degrade-2))",
+        "vermelho-degrade-3": "hsl(var(--vermelho-degrade-3))",
       },
       borderRadius: {
         lg: "var(--radius)",

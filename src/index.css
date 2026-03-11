@@ -11,6 +11,19 @@ All colors MUST be HSL.
     /* Backgrounds */
     --background: 0 0% 100%;
     --foreground: 0 0% 5%;
+      /* Paleta personalizada */
+      --preto: 0 0% 0%; /* #000000 */
+      --branco: 0 0% 100%; /* #ffffff */
+      --transparent: 0 0% 100% / 0; /* transparente */
+      --branco-background: 210 20% 96%; /* #f3f4f5 */
+      --cinza-background: 225 10% 13%; /* #202123 */
+      --cinza-components: 225 6% 24%; /* #3b3d40 */
+      --vermelho-components: 348 93% 42%; /* #d6011b */
+      --preto-components: 234 39% 12%; /* #12172A */
+      /* Degradês */
+      --preto-degrade-1: 266 15% 19%; /* #2E2A3A */
+      --marrom-degrade-2: 353 38% 31%; /* #6B3137 */
+      --vermelho-degrade-3: 3 57% 50%; /* #C33B35 */
     
     /* Card */
     --card: 0 0% 100%;
@@ -70,6 +83,18 @@ All colors MUST be HSL.
     /* Backgrounds - Dark mode baseado em #d6011b */
     --background: 348 35% 12%;
     --foreground: 348 20% 90%;
+     /* Paleta personalizada (modo escuro) */
+     --preto: 0 0% 0%;
+     --branco: 0 0% 100%;
+     --transparent: 0 0% 100% / 0;
+     --branco-background: 210 20% 16%; /* escurecido */
+     --cinza-background: 225 10% 10%; /* mais escuro */
+     --cinza-components: 225 6% 18%;
+     --vermelho-components: 348 93% 42%;
+     --preto-components: 234 39% 8%;
+     --preto-degrade-1: 266 15% 14%;
+     --marrom-degrade-2: 353 38% 21%;
+     --vermelho-degrade-3: 3 57% 35%;
     
     /* Card - Componentes dark vermelho */
     --card: 348 40% 18%;
