@@ -1,14 +1,24 @@
-export interface Comerciante {
-  id: number;
+export interface Consumidor {
+  id?: number;
+  email: string;
   nome: string;
-  categoria: string;
-  descricao: string;
-  endereco: string;
+  senha: string;
+  cpf?: string;
+  celular?: string;
+  tipo: 'consumidor';
+}
+
+export interface Comerciante {
+  id_comerciante?: number;
+  nome: string;
+  cpf: string;
+  celular: string;
   telefone: string;
   email: string;
-  horario: string;
-  avaliacao: number;
-  produtos: number[];
+  cnpj: string;
+  senha: string;
+  tipo: 'comerciante';
+  dataCadastro?: string;
 }
 
 export interface Produto {

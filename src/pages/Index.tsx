@@ -5,6 +5,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Store, Users, TrendingUp, MapPin, ArrowRight } from "lucide-react";
 import statsData from "@/data/stats.json";
+// Garante que o usuário inicie deslogado ao abrir a tela inicial
+if (typeof window !== "undefined") {
+  sessionStorage.removeItem("isLoggedIn");
+  sessionStorage.removeItem("userEmail");
+}
 
 const Index = () => {
   const iconMap = {

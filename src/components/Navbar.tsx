@@ -9,11 +9,11 @@ const Navbar = () => {
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
+
   useEffect(() => {
     const checkLogin = () => {
-      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
-      const email = localStorage.getItem("userEmail") || "";
-      // Extrai o nome do email (antes do @)
+      setIsLoggedIn(sessionStorage.getItem("isLoggedIn") === "true");
+      const email = sessionStorage.getItem("userEmail") || "";
       setUserName(email.split("@")[0]);
     };
     checkLogin();
@@ -22,8 +22,8 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userEmail");
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("userEmail");
     setIsLoggedIn(false);
     navigate("/login");
   };
@@ -34,7 +34,6 @@ const Navbar = () => {
     { to: "/contato", label: "Contato" },
     { to: "/comerciantes", label: "Comerciantes" },
     { to: "/produtos", label: "Produtos" },
-    { to: "/sobre", label: "Sobre" },
   ];
 
   return (
