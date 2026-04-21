@@ -111,7 +111,8 @@ export function AdminLojas() {
 
       if (editingLoja?.id) {
         // Atualizar
-        const lojaAtualizada = await lojaApi.atualizar(editingLoja.id, formData);
+        const comercianteId = localStorage.getItem('userId');
+        const lojaAtualizada = await lojaApi.atualizar(editingLoja.id, formData, comercianteId ? parseInt(comercianteId) : undefined);
         setLojas(lojas.map((l) => (l.id === editingLoja.id ? lojaAtualizada : l)));
       } else {
         // Criar

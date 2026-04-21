@@ -158,7 +158,7 @@ export const lojaApi = {
   },
 
   // Atualizar loja
-  async atualizar(id: number, loja: Omit<Loja, 'id' | 'dataCadastro'>): Promise<Loja> {
+  async atualizar(id: number, loja: Omit<Loja, 'id' | 'dataCadastro'>, comercianteId?: number): Promise<Loja> {
     try {
       // Prepara dados para envio
       const dadosEnvio = {
@@ -172,6 +172,9 @@ export const lojaApi = {
         cep: loja.cep || '',
         descricao: loja.descricao || '',
         statusLoja: loja.statusLoja || 'ATIVA',
+        comerciante: {
+          id_comerciante: comercianteId || loja.comercianteId || 1,
+        },
       };
 
       const response = await fetch(`${API_URL}/${id}`, {

@@ -1,6 +1,6 @@
 import { Consumidor } from '../types';
 
-const API_URL = 'http://:8080/consumidores';
+const API_URL = 'http://localhost:8081/consumidores';
 
 export const apiService = {
   // Login - busca consumidor por email e senha
