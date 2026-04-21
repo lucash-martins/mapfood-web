@@ -43,17 +43,18 @@ export default function Login() {
 
       // Salva dados do usuário no localStorage
       localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userId", String(usuario.id));
+      localStorage.setItem("userId", String(usuario.id || usuario.id_comerciante));
       localStorage.setItem("userEmail", usuario.email);
       localStorage.setItem("userName", usuario.nome);
       localStorage.setItem("userType", tipo);
-
-      // Redireciona baseado no tipo
+      
+      // Salva o objeto completo do comerciante se for comerciante
       if (tipo === 'comerciante') {
-        navigate("/dashboard"); // Ou sua página de dashboard de comerciante
-      } else {
-        navigate("/home");
+        localStorage.setItem("userObject", JSON.stringify(usuario));
       }
+
+      // Redireciona para /home
+      navigate("/home");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro ao fazer login");
     } finally {

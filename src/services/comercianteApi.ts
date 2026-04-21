@@ -3,6 +3,32 @@ import { Comerciante } from '../types';
 const API_URL = 'http://localhost:8080/comerciantes';
 
 export const comercianteApi = {
+  // Listar todos os comerciantes
+  async listar(): Promise<Comerciante[]> {
+    try {
+      const response = await fetch(API_URL, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        console.error('Erro na resposta:', response.status, text);
+        throw new Error(`Erro ${response.status}: ${text.substring(0, 100)}`);
+      }
+      
+      const comerciantes: Comerciante[] = await response.json();
+      return comerciantes;
+    } catch (error) {
+      console.error('Erro completo em listar:', error);
+      throw new Error(
+        error instanceof Error ? error.message : 'Erro ao listar comerciantes'
+      );
+    }
+  },
+
   // Login - autentica comerciante sem endpoint /login
   async login(email: string, senha: string): Promise<Comerciante> {
     try {

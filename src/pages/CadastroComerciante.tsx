@@ -58,18 +58,8 @@ export default function CadastroComerciante() {
       return;
     }
 
-    if (!formData.cnpj.trim()) {
-      setError("CNPJ é obrigatório");
-      return;
-    }
-
     if (!formData.celular.trim()) {
       setError("Celular é obrigatório");
-      return;
-    }
-
-    if (!formData.telefone.trim()) {
-      setError("Telefone é obrigatório");
       return;
     }
 
@@ -210,7 +200,7 @@ export default function CadastroComerciante() {
               </div>
 
               <div>
-                <label className="block mb-0.5 text-sm font-medium">CNPJ</label>
+                <label className="block mb-0.5 text-sm font-medium">CNPJ (opcional)</label>
                 <div className="flex items-center border rounded px-2 h-10">
                   <User size={16} className="text-gray-400" />
                   <input
@@ -220,7 +210,6 @@ export default function CadastroComerciante() {
                     className="w-full p-1.5 outline-none text-sm"
                     value={formData.cnpj}
                     onChange={(e) => setFormData({ ...formData, cnpj: maskCNPJ(e.target.value) })}
-                    required
                     disabled={loading}
                   />
                 </div>
@@ -247,7 +236,7 @@ export default function CadastroComerciante() {
               </div>
 
               <div>
-                <label className="block mb-0.5 text-sm font-medium">Telefone</label>
+                <label className="block mb-0.5 text-sm font-medium">Telefone (opcional)</label>
                 <div className="flex items-center border rounded px-2 h-10">
                   <Phone size={16} className="text-gray-400" />
                   <input
@@ -257,7 +246,6 @@ export default function CadastroComerciante() {
                     className="w-full p-1.5 outline-none text-sm"
                     value={formData.telefone}
                     onChange={(e) => setFormData({ ...formData, telefone: maskTelefone(e.target.value) })}
-                    required
                     disabled={loading}
                   />
                 </div>

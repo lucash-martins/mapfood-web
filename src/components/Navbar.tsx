@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu, X, Store, User, LogOut } from "lucide-react";
+import { Menu, X, Store, User, LogOut, Settings } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -12,18 +12,29 @@ const Navbar = () => {
 
   useEffect(() => {
     const checkLogin = () => {
-      setIsLoggedIn(sessionStorage.getItem("isLoggedIn") === "true");
-      const email = sessionStorage.getItem("userEmail") || "";
+      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+      const email = localStorage.getItem("userEmail") || "";
       setUserName(email.split("@")[0]);
     };
     checkLogin();
     window.addEventListener("storage", checkLogin);
-    return () => window.removeEventListener("storage", checkLogin);
+    
+    // Verifica login imediatamente quando a navbar monta
+    const interval = setInterval(checkLogin, 500);
+    
+    return () => {
+      window.removeEventListener("storage", checkLogin);
+      clearInterval(interval);
+    };
   }, []);
 
   const handleLogout = () => {
-    sessionStorage.removeItem("isLoggedIn");
-    sessionStorage.removeItem("userEmail");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userObject");
     setIsLoggedIn(false);
     navigate("/login");
   };
@@ -83,6 +94,13 @@ const Navbar = () => {
                     >
                       Meu Perfil
                     </Link>
+                    <Link
+                      to="/admin/lojas"
+                      className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
+                    >
+                      <Settings size={16} />
+                      Admin
+                    </Link>
                     <button
                       onClick={handleLogout}
                       className="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600 flex items-center gap-2"
@@ -139,6 +157,12 @@ const Navbar = () => {
                 <Link to="/perfil" onClick={() => setIsOpen(false)}>
                   <Button variant="outline" className="w-full mb-2">
                     Meu Perfil
+                  </Button>
+                </Link>
+                <Link to="/admin/lojas" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full mb-2">
+                    <Settings size={16} className="mr-2" />
+                    Admin
                   </Button>
                 </Link>
                 <Button
